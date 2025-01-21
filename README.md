@@ -1,19 +1,11 @@
 # GameDatabase API - Gerenciador de Jogos
 #### Este projeto é uma API RESTful para gerenciamento de jogos. A API fornece endpoints para CRUD (Create, Read, Update, Delete) operações em jogos, usando Java "puro".
 
-### Sumário
-
-- [Descrição](#descricao)
-- [Configuração](#configuracao)
-- [Instalação](#instalacao)
-- [Uso Localmente](#usolocalmente)
-- [Endpoints](#endpoints)
-
 ## Descrição
 
 #### O GameDatabase API permite a criação, leitura, atualização e exclusão de informações sobre jogos. Ele utiliza um banco de dados PostgreSQL para armazenamento de dados e é acessado através de endpoints RESTful.
 
-## Tecnologia
+## Tecnologias
 
 - Java 21
 - PostgreSQL
