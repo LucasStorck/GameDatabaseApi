@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS games(
+    id SERIAL PRIMARY KEY NOT NULL,
+    title VARCHAR(63) NOT NULL,
+    genre VARCHAR(63) NOT NULL,
+    publisher VARCHAR(63) NOT NULL,
+    developers VARCHAR(63) NOT NULL,
+    platforms VARCHAR(63) NOT NULL,
+    release VARCHAR(63) NOT NULL
+)
