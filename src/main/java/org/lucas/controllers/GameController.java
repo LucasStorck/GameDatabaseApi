@@ -40,8 +40,11 @@ public class GameController {
           gameService.createGame(game);
           response = gson.toJson(game);
         } else if ("PUT".equals(method)) {
+          String path = exchange.getRequestURI().getPath();
+          int id = Integer.parseInt(path.split("/")[2]);
           InputStreamReader reader = new InputStreamReader(exchange.getRequestBody());
           Game game = gson.fromJson(reader, Game.class);
+          game.setId(id);
           gameService.updateGame(game);
           response = gson.toJson(game);
         } else if ("DELETE".equals(method)) {

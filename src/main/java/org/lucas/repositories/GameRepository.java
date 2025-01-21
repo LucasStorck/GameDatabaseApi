@@ -57,7 +57,7 @@ public class GameRepository {
   public void createGame(Game game) throws SQLException {
     String query = "INSERT INTO games (title, genre, publisher, developers, platforms, release) VALUES (?, ?, ?, ?, ?, ?)";
     try (Connection connection = Database.getConnection();
-         PreparedStatement statement = connection.prepareStatement(query)) {
+         PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
       statement.setString(1, game.getTitle());
       statement.setString(2, game.getGenre());
       statement.setString(3, game.getPublisher());
@@ -66,6 +66,10 @@ public class GameRepository {
       statement.setString(6, game.getRelease());
       statement.executeUpdate();
 
+      ResultSet generatedKeys = statement.getGeneratedKeys();
+      if (generatedKeys.next()) {
+        game.setId(generatedKeys.getInt(1));
+      }
     }
   }
 
